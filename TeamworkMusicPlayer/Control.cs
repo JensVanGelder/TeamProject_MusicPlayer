@@ -2,7 +2,6 @@
 using System.IO;
 using System.Threading;
 using WMPLib;
-using System.Linq;
 
 namespace TeamworkMusicPlayer
 {
@@ -17,10 +16,9 @@ namespace TeamworkMusicPlayer
 
         public void MainMenu()
         {
-            Control player = new Control();
-            player.Greeting();
-            player.GetPath();
-            player.PlayMusic(player.Path);
+            Greeting();
+            GetPath();
+            PlayMusic(Path);
             Console.ReadLine();
         }
 
@@ -51,7 +49,7 @@ namespace TeamworkMusicPlayer
         {
             FileReaderWriter readerWriter = new FileReaderWriter();
             string logFile = "D:/VDAB_.net_C-/VDAB/Week3/TeamworkMusicPlayer/Log.txt";
-            SongName = file.Substring(file.LastIndexOf("/")+1);
+            SongName = file.Substring(file.LastIndexOf("/") + 1);
             player.settings.volume = Volume;
             IsPaused = false;
             player.URL = file;
@@ -78,7 +76,7 @@ namespace TeamworkMusicPlayer
                 $"\nVolume level {Volume}%");
             cki = Console.ReadKey();
 
-            if (cki.Key == ConsoleKey.D1|| cki.Key == ConsoleKey.NumPad1)
+            if (cki.Key == ConsoleKey.D1 || cki.Key == ConsoleKey.NumPad1)
             {
                 PausePlay();
                 Console.Clear();
@@ -135,7 +133,7 @@ namespace TeamworkMusicPlayer
 
         public void MuteUnmute()
         {
-            if (IsMuted== true)
+            if (IsMuted == true)
             {
                 player.settings.mute = false;
                 IsMuted = false;
