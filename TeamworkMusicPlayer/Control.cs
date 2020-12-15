@@ -80,7 +80,6 @@ namespace TeamworkMusicPlayer
 
             if (cki.Key == ConsoleKey.D1|| cki.Key == ConsoleKey.NumPad1)
             {
-                //shfvhjdgfjkhgsd fvjkgjsdkv
                 PausePlay();
                 Console.Clear();
             }
@@ -161,6 +160,8 @@ namespace TeamworkMusicPlayer
             else
             {
                 player.settings.volume = Volume;
+                //Console.WriteLine($"Titel: {media.getItemInfo("Title")}");
+
             }
         }
     }
