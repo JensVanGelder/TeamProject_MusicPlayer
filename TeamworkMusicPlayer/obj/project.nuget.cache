@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "e+WHGy09GU2WzJWFIgI/iIDnJPsLeEH5gViZkYZmFpQkPi4176MshLvwkXZngRfIVqI6hb39gwR9RntFggkA0A==",
+  "dgSpecHash": "vK7/l0t/avjvO72eqQdHtbBujvoLEVZlF33kSph024coy6pvXX8SGugMPlhlL5o8z+9eP3Hm37H0ZKTNrAawrg==",
   "success": true,
   "projectFilePath": "D:\\VDAB_.net_C-\\VDAB\\GitTeamWorkMusicPlayer\\TeamworkMusicPlayer\\TeamworkMusicPlayer.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\jens\\.nuget\\packages\\taglib-sharp-netstandard2.0\\2.1.0\\taglib-sharp-netstandard2.0.2.1.0.nupkg.sha512"
+  ],
   "logs": []
 }

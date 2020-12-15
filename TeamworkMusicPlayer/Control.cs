@@ -2,7 +2,6 @@
 using System.IO;
 using System.Threading;
 using WMPLib;
-
 namespace TeamworkMusicPlayer
 {
     internal class Control
@@ -177,7 +176,6 @@ namespace TeamworkMusicPlayer
                 Volume = volume;
                 player.settings.volume = Volume;
                 //Console.WriteLine($"Titel: {media.getItemInfo("Title")}");
-
             }
         }
 
