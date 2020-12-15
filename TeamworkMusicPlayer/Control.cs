@@ -37,8 +37,7 @@ namespace TeamworkMusicPlayer
             }
             else
             {
-                Console.WriteLine("Error");
-                Thread.Sleep(1000);
+                ErrorMessage("ERROR File not found", 1000);
                 Console.Clear();
                 GetPath();
             }
@@ -72,8 +71,9 @@ namespace TeamworkMusicPlayer
                 "\n5.Stop playing song" +
                 "\n6.Quit player" +
                 "\n\n==================================================================" +
-                $"\n\nCurrently playing: {SongName}" +
-                $"\nVolume level {Volume}%");
+                $"\nVolume level [{VolumeBar()}] {Volume}%" +
+                $"\n\nCurrently playing:");
+            SongData();
             cki = Console.ReadKey();
 
             if (cki.Key == ConsoleKey.D1 || cki.Key == ConsoleKey.NumPad1)
@@ -109,8 +109,7 @@ namespace TeamworkMusicPlayer
             }
             else
             {
-                Console.WriteLine("ERROR");
-                Thread.Sleep(1000);
+                ErrorMessage("ERROR Input not found", 1500);
                 Console.Clear();
                 UserInput();
             }
@@ -149,16 +148,71 @@ namespace TeamworkMusicPlayer
         {
             Console.WriteLine($"\nThis is the current volume {Volume}" +
                         "\nSelect volume between 1/100");
-            Volume = Convert.ToInt32(Console.ReadLine());
-            if (Volume > 100 || Volume < 0)
+            int volume = Convert.ToInt32(Console.ReadLine());
+            if (volume > 100 || volume < 0)
             {
-                Console.WriteLine("Error");
-                Thread.Sleep(1000);
+                ErrorMessage("ERROR volume not valid", 1500);
             }
             else
             {
+                Volume = volume;
                 player.settings.volume = Volume;
             }
+        }
+
+        public string VolumeBar()
+        {
+            string volumeBar = "";
+            for (int i = 0; i < Volume/5; i++)
+            {
+                volumeBar += "#";
+            }
+            if (Volume <=4 && Volume >=1)
+            {
+                volumeBar = "#";
+            }
+            while (volumeBar.Length != 20)
+            {
+                volumeBar += " ";
+            }
+            return volumeBar;
+        }
+        
+        public void SongData()
+        {
+            var song = TagLib.File.Create(Path);
+            string title = song.Tag.Title;
+            title = SongDataChecker(title);
+            string artist = song.Tag.FirstAlbumArtist;
+            artist = SongDataChecker(artist);
+            string album = song.Tag.Album;
+            album = SongDataChecker(album);
+            string genre = song.Tag.FirstGenre;
+            genre = SongDataChecker(genre);
+            string duration = song.Properties.Duration.ToString(@"mm\:ss");
+
+
+            Console.WriteLine($"" +
+                $"\nSong:           {title}" +
+                $"\nArtist:         {artist}" +
+                $"\nAlbum:          {album}" +
+                $"\nGenre:          {genre}" +
+                $"\nDuration:       {duration}");
+        }
+        public string SongDataChecker(string tag)
+        {
+            if (String.IsNullOrEmpty(tag))
+            {
+                 tag = "Unknown";
+            }
+            return tag;
+        }
+        public void ErrorMessage(string errorInfo, int sleepTimer)
+        {
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine($"\n{errorInfo}");
+            Thread.Sleep(sleepTimer);
+            Console.ResetColor();
         }
     }
 }
