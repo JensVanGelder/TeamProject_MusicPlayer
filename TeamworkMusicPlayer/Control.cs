@@ -78,6 +78,7 @@ namespace TeamworkMusicPlayer
 
             if (cki.Key == ConsoleKey.D1 || cki.Key == ConsoleKey.NumPad1)
             {
+                //shfvhjdgfjkhgsd fvjkgjsdkv
                 PausePlay();
                 Console.Clear();
             }
