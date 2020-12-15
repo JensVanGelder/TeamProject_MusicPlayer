@@ -2,7 +2,6 @@
 using System.IO;
 using System.Threading;
 using WMPLib;
-using System.Linq;
 
 namespace TeamworkMusicPlayer
 {
@@ -14,13 +13,31 @@ namespace TeamworkMusicPlayer
         public bool IsPaused { get; set; }
         public bool IsMuted { get; set; }
         private WindowsMediaPlayer player = new WindowsMediaPlayer();
+        string asciiTitle = @"
+.__   __.      ___      .______     _______.___________. _______ .______      .______      
+|  \ |  |     /   \     |   _  \   /       |           ||   ____||   _  \     |   _  \     
+|   \|  |    /  ^  \    |  |_)  | |   (----`---|  |----`|  |__   |  |_)  |    |  |_)  |    
+|  . `  |   /  /_\  \   |   ___/   \   \       |  |     |   __|  |      /     |      /     
+|  |\   |  /  _____  \  |  |   .----)   |      |  |     |  |____ |  |\  \----.|  |\  \----.
+|__| \__| /__/     \__\ | _|   |_______/       |__|     |_______|| _| `._____|| _| `._____|  tm
+                                                                                           
+";
 
         public void MainMenu()
         {
-            Control player = new Control();
-            player.Greeting();
-            player.GetPath();
-            player.PlayMusic(player.Path);
+            Console.OutputEncoding = System.Text.Encoding.UTF8;
+            Console.WriteLine(asciiTitle);
+            Console.ReadLine();
+            Console.Clear();
+            SongSelectMenu();
+        }
+        public void SongSelectMenu()
+        {
+            Console.OutputEncoding = System.Text.Encoding.UTF8;
+            Console.WriteLine(asciiTitle);
+            Greeting();
+            GetPath();
+            PlayMusic(Path);
             Console.ReadLine();
         }
 
@@ -39,8 +56,7 @@ namespace TeamworkMusicPlayer
             }
             else
             {
-                Console.WriteLine("Error");
-                Thread.Sleep(1000);
+                ErrorMessage("ERROR File not found", 1000);
                 Console.Clear();
                 GetPath();
             }
@@ -51,7 +67,7 @@ namespace TeamworkMusicPlayer
         {
             FileReaderWriter readerWriter = new FileReaderWriter();
             string logFile = "D:/VDAB_.net_C-/VDAB/Week3/TeamworkMusicPlayer/Log.txt";
-            SongName = file.Substring(file.LastIndexOf("/")+1);
+            SongName = file.Substring(file.LastIndexOf("/") + 1);
             player.settings.volume = Volume;
             IsPaused = false;
             player.URL = file;
@@ -74,11 +90,12 @@ namespace TeamworkMusicPlayer
                 "\n5.Stop playing song" +
                 "\n6.Quit player" +
                 "\n\n==================================================================" +
-                $"\n\nCurrently playing: {SongName}" +
-                $"\nVolume level {Volume}%");
+                $"\nVolume level [{VolumeBar()}] {Volume}%" +
+                $"\n\nCurrently playing:");
+            SongData();
             cki = Console.ReadKey();
 
-            if (cki.Key == ConsoleKey.D1|| cki.Key == ConsoleKey.NumPad1)
+            if (cki.Key == ConsoleKey.D1 || cki.Key == ConsoleKey.NumPad1)
             {
                 PausePlay();
                 Console.Clear();
@@ -96,7 +113,7 @@ namespace TeamworkMusicPlayer
             else if (cki.Key == ConsoleKey.D4 || cki.Key == ConsoleKey.NumPad4)
             {
                 player.close();
-                MainMenu();
+                SongSelectMenu();
                 Console.Clear();
             }
             else if (cki.Key == ConsoleKey.D5 || cki.Key == ConsoleKey.NumPad5)
@@ -111,8 +128,7 @@ namespace TeamworkMusicPlayer
             }
             else
             {
-                Console.WriteLine("ERROR");
-                Thread.Sleep(1000);
+                ErrorMessage("ERROR Input not found", 1500);
                 Console.Clear();
                 UserInput();
             }
@@ -135,7 +151,7 @@ namespace TeamworkMusicPlayer
 
         public void MuteUnmute()
         {
-            if (IsMuted== true)
+            if (IsMuted == true)
             {
                 player.settings.mute = false;
                 IsMuted = false;
@@ -151,18 +167,73 @@ namespace TeamworkMusicPlayer
         {
             Console.WriteLine($"\nThis is the current volume {Volume}" +
                         "\nSelect volume between 1/100");
-            Volume = Convert.ToInt32(Console.ReadLine());
-            if (Volume > 100 || Volume < 0)
+            int volume = Convert.ToInt32(Console.ReadLine());
+            if (volume > 100 || volume < 0)
             {
-                Console.WriteLine("Error");
-                Thread.Sleep(1000);
+                ErrorMessage("ERROR volume not valid", 1500);
             }
             else
             {
+                Volume = volume;
                 player.settings.volume = Volume;
                 //Console.WriteLine($"Titel: {media.getItemInfo("Title")}");
 
             }
+        }
+
+        public string VolumeBar()
+        {
+            string volumeBar = "";
+            for (int i = 0; i < Volume/5; i++)
+            {
+                volumeBar += "#";
+            }
+            if (Volume <=4 && Volume >=1)
+            {
+                volumeBar = "#";
+            }
+            while (volumeBar.Length != 20)
+            {
+                volumeBar += " ";
+            }
+            return volumeBar;
+        }
+        
+        public void SongData()
+        {
+            var song = TagLib.File.Create(Path);
+            string title = song.Tag.Title;
+            title = SongDataChecker(title);
+            string artist = song.Tag.FirstAlbumArtist;
+            artist = SongDataChecker(artist);
+            string album = song.Tag.Album;
+            album = SongDataChecker(album);
+            string genre = song.Tag.FirstGenre;
+            genre = SongDataChecker(genre);
+            string duration = song.Properties.Duration.ToString(@"mm\:ss");
+
+
+            Console.WriteLine($"" +
+                $"\nSong:           {title}" +
+                $"\nArtist:         {artist}" +
+                $"\nAlbum:          {album}" +
+                $"\nGenre:          {genre}" +
+                $"\nDuration:       {duration}");
+        }
+        public string SongDataChecker(string tag)
+        {
+            if (String.IsNullOrEmpty(tag))
+            {
+                 tag = "Unknown";
+            }
+            return tag;
+        }
+        public void ErrorMessage(string errorInfo, int sleepTimer)
+        {
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine($"\n{errorInfo}");
+            Thread.Sleep(sleepTimer);
+            Console.ResetColor();
         }
     }
 }
