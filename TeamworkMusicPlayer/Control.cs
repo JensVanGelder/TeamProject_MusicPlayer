@@ -13,9 +13,28 @@ namespace TeamworkMusicPlayer
         public bool IsPaused { get; set; }
         public bool IsMuted { get; set; }
         private WindowsMediaPlayer player = new WindowsMediaPlayer();
+        string asciiTitle = @"
+.__   __.      ___      .______     _______.___________. _______ .______      .______      
+|  \ |  |     /   \     |   _  \   /       |           ||   ____||   _  \     |   _  \     
+|   \|  |    /  ^  \    |  |_)  | |   (----`---|  |----`|  |__   |  |_)  |    |  |_)  |    
+|  . `  |   /  /_\  \   |   ___/   \   \       |  |     |   __|  |      /     |      /     
+|  |\   |  /  _____  \  |  |   .----)   |      |  |     |  |____ |  |\  \----.|  |\  \----.
+|__| \__| /__/     \__\ | _|   |_______/       |__|     |_______|| _| `._____|| _| `._____|  tm
+                                                                                           
+";
 
         public void MainMenu()
         {
+            Console.OutputEncoding = System.Text.Encoding.UTF8;
+            Console.WriteLine(asciiTitle);
+            Console.ReadLine();
+            Console.Clear();
+            SongSelectMenu();
+        }
+        public void SongSelectMenu()
+        {
+            Console.OutputEncoding = System.Text.Encoding.UTF8;
+            Console.WriteLine(asciiTitle);
             Greeting();
             GetPath();
             PlayMusic(Path);
@@ -94,7 +113,7 @@ namespace TeamworkMusicPlayer
             else if (cki.Key == ConsoleKey.D4 || cki.Key == ConsoleKey.NumPad4)
             {
                 player.close();
-                MainMenu();
+                SongSelectMenu();
                 Console.Clear();
             }
             else if (cki.Key == ConsoleKey.D5 || cki.Key == ConsoleKey.NumPad5)
