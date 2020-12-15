@@ -1,0 +1,16 @@
+D:\VDAB_.net_C-\VDAB\Week3\TeamworkMusicPlayer\TeamworkMusicPlayer\bin\Debug\netcoreapp3.1\TeamworkMusicPlayer.exe
+D:\VDAB_.net_C-\VDAB\Week3\TeamworkMusicPlayer\TeamworkMusicPlayer\bin\Debug\netcoreapp3.1\TeamworkMusicPlayer.deps.json
+D:\VDAB_.net_C-\VDAB\Week3\TeamworkMusicPlayer\TeamworkMusicPlayer\bin\Debug\netcoreapp3.1\TeamworkMusicPlayer.runtimeconfig.json
+D:\VDAB_.net_C-\VDAB\Week3\TeamworkMusicPlayer\TeamworkMusicPlayer\bin\Debug\netcoreapp3.1\TeamworkMusicPlayer.runtimeconfig.dev.json
+D:\VDAB_.net_C-\VDAB\Week3\TeamworkMusicPlayer\TeamworkMusicPlayer\bin\Debug\netcoreapp3.1\TeamworkMusicPlayer.dll
+D:\VDAB_.net_C-\VDAB\Week3\TeamworkMusicPlayer\TeamworkMusicPlayer\bin\Debug\netcoreapp3.1\TeamworkMusicPlayer.pdb
+D:\VDAB_.net_C-\VDAB\Week3\TeamworkMusicPlayer\TeamworkMusicPlayer\bin\Debug\netcoreapp3.1\Interop.WMPLib.dll
+D:\VDAB_.net_C-\VDAB\Week3\TeamworkMusicPlayer\TeamworkMusicPlayer\obj\Debug\netcoreapp3.1\TeamworkMusicPlayer.csprojAssemblyReference.cache
+D:\VDAB_.net_C-\VDAB\Week3\TeamworkMusicPlayer\TeamworkMusicPlayer\obj\Debug\netcoreapp3.1\Interop.WMPLib.dll
+D:\VDAB_.net_C-\VDAB\Week3\TeamworkMusicPlayer\TeamworkMusicPlayer\obj\Debug\netcoreapp3.1\TeamworkMusicPlayer.csproj.ResolveComReference.cache
+D:\VDAB_.net_C-\VDAB\Week3\TeamworkMusicPlayer\TeamworkMusicPlayer\obj\Debug\netcoreapp3.1\TeamworkMusicPlayer.AssemblyInfoInputs.cache
+D:\VDAB_.net_C-\VDAB\Week3\TeamworkMusicPlayer\TeamworkMusicPlayer\obj\Debug\netcoreapp3.1\TeamworkMusicPlayer.AssemblyInfo.cs
+D:\VDAB_.net_C-\VDAB\Week3\TeamworkMusicPlayer\TeamworkMusicPlayer\obj\Debug\netcoreapp3.1\TeamworkMusicPlayer.csproj.CoreCompileInputs.cache
+D:\VDAB_.net_C-\VDAB\Week3\TeamworkMusicPlayer\TeamworkMusicPlayer\obj\Debug\netcoreapp3.1\TeamworkMusicPlayer.dll
+D:\VDAB_.net_C-\VDAB\Week3\TeamworkMusicPlayer\TeamworkMusicPlayer\obj\Debug\netcoreapp3.1\TeamworkMusicPlayer.pdb
+D:\VDAB_.net_C-\VDAB\Week3\TeamworkMusicPlayer\TeamworkMusicPlayer\obj\Debug\netcoreapp3.1\TeamworkMusicPlayer.genruntimeconfig.cache
