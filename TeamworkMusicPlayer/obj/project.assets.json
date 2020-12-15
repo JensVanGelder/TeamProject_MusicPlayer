@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\VDAB_.net_C-\\VDAB\\Week3\\TeamworkMusicPlayer\\TeamworkMusicPlayer\\TeamworkMusicPlayer.csproj",
+      "projectUniqueName": "D:\\VDAB_.net_C-\\VDAB\\GitTeamWorkMusicPlayer\\TeamworkMusicPlayer\\TeamworkMusicPlayer.csproj",
       "projectName": "TeamworkMusicPlayer",
-      "projectPath": "D:\\VDAB_.net_C-\\VDAB\\Week3\\TeamworkMusicPlayer\\TeamworkMusicPlayer\\TeamworkMusicPlayer.csproj",
+      "projectPath": "D:\\VDAB_.net_C-\\VDAB\\GitTeamWorkMusicPlayer\\TeamworkMusicPlayer\\TeamworkMusicPlayer.csproj",
       "packagesPath": "C:\\Users\\jens\\.nuget\\packages\\",
-      "outputPath": "D:\\VDAB_.net_C-\\VDAB\\Week3\\TeamworkMusicPlayer\\TeamworkMusicPlayer\\obj\\",
+      "outputPath": "D:\\VDAB_.net_C-\\VDAB\\GitTeamWorkMusicPlayer\\TeamworkMusicPlayer\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\jens\\AppData\\Roaming\\NuGet\\NuGet.Config",
