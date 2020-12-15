@@ -39,6 +39,12 @@
       "frameworks": {
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
+          "dependencies": {
+            "taglib-sharp-netstandard2.0": {
+              "target": "Package",
+              "version": "[2.1.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

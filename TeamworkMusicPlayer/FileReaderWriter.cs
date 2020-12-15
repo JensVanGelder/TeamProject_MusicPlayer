@@ -15,7 +15,8 @@ namespace TeamworkMusicPlayer
 
         public void ReadDataFromFile(string path)
         {
-            throw new NotImplementedException();
+            string text = File.ReadAllText(path);
+            Console.WriteLine(text);
         }
     }
 }

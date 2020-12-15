@@ -14,3 +14,5 @@ D:\VDAB_.net_C-\VDAB\Week3\TeamworkMusicPlayer\TeamworkMusicPlayer\obj\Debug\net
 D:\VDAB_.net_C-\VDAB\Week3\TeamworkMusicPlayer\TeamworkMusicPlayer\obj\Debug\netcoreapp3.1\TeamworkMusicPlayer.dll
 D:\VDAB_.net_C-\VDAB\Week3\TeamworkMusicPlayer\TeamworkMusicPlayer\obj\Debug\netcoreapp3.1\TeamworkMusicPlayer.pdb
 D:\VDAB_.net_C-\VDAB\Week3\TeamworkMusicPlayer\TeamworkMusicPlayer\obj\Debug\netcoreapp3.1\TeamworkMusicPlayer.genruntimeconfig.cache
+D:\VDAB_.net_C-\VDAB\Week3\TeamworkMusicPlayer\TeamworkMusicPlayer\bin\Debug\netcoreapp3.1\taglib-sharp.dll
+D:\VDAB_.net_C-\VDAB\Week3\TeamworkMusicPlayer\TeamworkMusicPlayer\obj\Debug\netcoreapp3.1\TeamworkMusicPlayer.csproj.CopyComplete
