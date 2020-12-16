@@ -50,8 +50,8 @@ namespace TeamworkMusicPlayer
             Console.WriteLine(asciiTitle);
             Console.Write("Controls: " +
                 "\n1.Play song" +
-                "\n2.Play playlist (Not implemented yet)" +
-                "\n3.Make playlist (Not implemented yet)" +
+                "\n2.Play playlist" +
+                "\n3.Create playlist" +
                 "\n4.Show play history" +
                 "\n5.Quit player");
             ConsoleKeyInfo cki;
@@ -125,10 +125,9 @@ namespace TeamworkMusicPlayer
 
         public void PlayMusic(string file)
         {
-            string logFile = "D:/VDAB/Week3/TeamWorkMusicPlayer/Log.txt";
             SongName = file.Substring(file.LastIndexOf("/") + 1);
             player.URL = file;
-            readerWriter.WriteDataTofile(SongName, logFile);
+            readerWriter.WriteDataTofile(SongName, LogPath);
 
             while (true)    //Needs to be fixed, loop needs to check if song is still playing (infinite loop atm)
             {
@@ -160,6 +159,7 @@ namespace TeamworkMusicPlayer
             ChosenPlaylist = Console.ReadLine();
             if (File.Exists($"D:/VDAB/Week3/TeamWorkMusicPlayer/Playlists/{ChosenPlaylist}.txt"))
             {
+                readerWriter.WriteDataTofile($"Playlist:{ChosenPlaylist}", LogPath);
                 PlayPlaylist($"D:/VDAB/Week3/TeamWorkMusicPlayer/Playlists/{ChosenPlaylist}.txt");
             }
             else
