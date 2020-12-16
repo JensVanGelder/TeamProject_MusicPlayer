@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using System.Collections.Generic;
 
 namespace TeamworkMusicPlayer
 {
@@ -12,10 +13,17 @@ namespace TeamworkMusicPlayer
             date = DateTime.Now;
             writer.WriteLine($"{textToWriteTofile} - {date}");
         }
+        public void WritePlaylistToFile(string textToWriteTofile, string path)
+        {
+            using StreamWriter writer = new StreamWriter(path, true);
+            writer.WriteLine($"{textToWriteTofile}");
+        }
 
         public void ReadDataFromFile(string path)
         {
-            throw new NotImplementedException();
+            string text = File.ReadAllText(path);
+            Console.WriteLine(text);
         }
+
     }
 }

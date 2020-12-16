@@ -1,4 +1,6 @@
 ﻿using System.IO;
+using System;
+using System.Threading;
 
 namespace TeamworkMusicPlayer
 {
@@ -10,6 +12,19 @@ namespace TeamworkMusicPlayer
             {
                 FileStream fileStream = File.Create(file);
                 fileStream.Close();
+            }
+        }
+        public void CreatePlaylistFile(string file)
+        {
+            if (!File.Exists(file))
+            {
+                FileStream fileStream = File.Create(file);
+                fileStream.Close();
+            }
+            else
+            {
+                Console.WriteLine("ERROR");
+                Thread.Sleep(1500);
             }
         }
 

@@ -1,14 +1,17 @@
-﻿namespace TeamworkMusicPlayer
+﻿using System.IO;
+using System;
+using WMPLib;
+
+namespace TeamworkMusicPlayer
 {
     internal class Program
     {
         private static void Main(string[] args)
         {
             FileManager filemanager = new FileManager();
-            Control player = new Control();
-
-            filemanager.CreateFile("D:/VDAB/Week3/TeamworkMusicPlayer/Log.txt");
-            player.MainMenu();
+            Control control = new Control();
+            filemanager.CreateFile(control.LogPath);
+            control.MainMenu();
         }
     }
 }
