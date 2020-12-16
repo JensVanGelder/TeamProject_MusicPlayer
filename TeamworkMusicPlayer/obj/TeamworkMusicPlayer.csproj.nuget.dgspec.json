@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\VDAB_.net_C-\\VDAB\\GitTeamWorkMusicPlayer\\TeamworkMusicPlayer\\TeamworkMusicPlayer.csproj": {}
+    "D:\\VDAB\\Week3\\TeamWorkMusicPlayer\\TeamworkMusicPlayer\\TeamworkMusicPlayer.csproj": {}
   },
   "projects": {
-    "D:\\VDAB_.net_C-\\VDAB\\GitTeamWorkMusicPlayer\\TeamworkMusicPlayer\\TeamworkMusicPlayer.csproj": {
+    "D:\\VDAB\\Week3\\TeamWorkMusicPlayer\\TeamworkMusicPlayer\\TeamworkMusicPlayer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\VDAB_.net_C-\\VDAB\\GitTeamWorkMusicPlayer\\TeamworkMusicPlayer\\TeamworkMusicPlayer.csproj",
+        "projectUniqueName": "D:\\VDAB\\Week3\\TeamWorkMusicPlayer\\TeamworkMusicPlayer\\TeamworkMusicPlayer.csproj",
         "projectName": "TeamworkMusicPlayer",
-        "projectPath": "D:\\VDAB_.net_C-\\VDAB\\GitTeamWorkMusicPlayer\\TeamworkMusicPlayer\\TeamworkMusicPlayer.csproj",
+        "projectPath": "D:\\VDAB\\Week3\\TeamWorkMusicPlayer\\TeamworkMusicPlayer\\TeamworkMusicPlayer.csproj",
         "packagesPath": "C:\\Users\\jens\\.nuget\\packages\\",
-        "outputPath": "D:\\VDAB_.net_C-\\VDAB\\GitTeamWorkMusicPlayer\\TeamworkMusicPlayer\\obj\\",
+        "outputPath": "D:\\VDAB\\Week3\\TeamWorkMusicPlayer\\TeamworkMusicPlayer\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\jens\\AppData\\Roaming\\NuGet\\NuGet.Config",

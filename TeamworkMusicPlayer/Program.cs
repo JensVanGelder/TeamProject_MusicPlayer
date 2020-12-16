@@ -7,7 +7,7 @@
             FileManager filemanager = new FileManager();
             Control player = new Control();
 
-            filemanager.CreateFile("D:/VDAB_.net_C-/VDAB/Week3/TeamworkMusicPlayer/Log.txt");
+            filemanager.CreateFile("D:/VDAB/Week3/TeamworkMusicPlayer/Log.txt");
             player.MainMenu();
         }
     }

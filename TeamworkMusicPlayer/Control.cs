@@ -65,7 +65,7 @@ namespace TeamworkMusicPlayer
         public void PlayMusic(string file)
         {
             FileReaderWriter readerWriter = new FileReaderWriter();
-            string logFile = "D:/VDAB_.net_C-/VDAB/Week3/TeamworkMusicPlayer/Log.txt";
+            string logFile = "D:/VDAB/Week3/TeamWorkMusicPlayer/Log.txt";
             SongName = file.Substring(file.LastIndexOf("/") + 1);
             player.settings.volume = Volume;
             IsPaused = false;
